@@ -2,9 +2,10 @@ from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, No
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from pinecone_client import index
 from langchain_openai import OpenAIEmbeddings
+from extract_video_id import get_youtube_video_id
 
-
-video_id = "YSMWN8VpY6A"
+youtube_url = input("Enter youtube url: ")
+video_id = get_youtube_video_id(youtube_url)
 ytt_api = YouTubeTranscriptApi()
 embeddings_model = OpenAIEmbeddings(model="text-embedding-3-small")
 

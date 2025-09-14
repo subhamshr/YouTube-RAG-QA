@@ -30,7 +30,7 @@ Question: {question}
 
 
 if __name__ == "__main__":
-    question = "Write Lee Kuan Yew's strategy in two short points"
+    question = input("Enter your questions regarding the video:\n")
     response = answer_question(question)
     print("Answer:\n", response)
     
