@@ -1,10 +1,12 @@
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound, VideoUnavailable
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from pinecone_client import index
-from .embedding import embeddings_model
+from langchain_openai import OpenAIEmbeddings
+
 
 video_id = "YSMWN8VpY6A"
 ytt_api = YouTubeTranscriptApi()
+embeddings_model = OpenAIEmbeddings(model="text-embedding-3-small")
 
 #1.Fetch transcript
 try:
